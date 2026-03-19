@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ClubHub — Campus Events & Clubs
+ClubHub is your all-in-one campus companion that connects students with the events, clubs, and achievements that matter most. Whether you're a student looking to explore campus life or a club head managing your organization, ClubHub makes everything seamless.
+For Students:
+🎯 Discover Events — Browse all upcoming campus events in one place. Filter by category — Technical, Cultural, Sports, Music, Arts, Dance, Literature, Photography, and Drama.
+📅 Register & Track — Register for events with a single tap and track your upcoming and past events through a personal calendar view.
+✅ QR Check-In — Each student gets a unique QR code. Club heads scan it at the venue for instant, paperless check-in.
+🏅 Badges & Achievements — Earn category badges by attending events. Unlock special achievements like Explorer, Early Bird, and Weekend Warrior. Rare legendary badges await the most dedicated campus participants.
+📊 Progress Tracking — Watch your progress rings fill up as you attend more events. Track your level, badge count, and event history all in one screen.
+🏛️ Follow Clubs — Stay updated with your favourite student clubs. View club profiles, upcoming events, and announcements.
+📢 Announcements — Get real-time announcements from club heads about event changes, updates, and important notices.
+📋 Duty Leave — Automatically generate Duty Leave requests when you check in to events, simplifying the academic leave process.
+🎓 Certificates — View and manage certificates earned through campus participation.
+For Club Heads:
+🛠️ Event Management — Create, edit, and manage events with full control over venue, date, time, capacity, registration fees, and target departments.
+📷 QR Scanner — A built-in QR scanner lets club heads check in students at the event venue in seconds. Unregistered students can be registered and checked in on the spot.
+📣 Post Announcements — Broadcast important updates to all registered or following students instantly.
+✅ DL Approval Center — Review and approve or reject student Duty Leave requests directly from the dashboard.
+📊 Event Roster — View the complete list of registered and checked-in students for any event.
+🖼️ Club Profile — Manage your club's profile, logo, description, and social handles.
+Home Screen Widget — Stay connected even from your home screen. ClubHub's widget shows your upcoming events at a glance without even opening the app.
+ClubHub is built for modern campus life — fast, intuitive, and designed with an Apple-quality interface that feels right at home on iPhone.
