@@ -1,21 +1,139 @@
-ClubHub — Campus Events & Clubs
-ClubHub is your all-in-one campus companion that connects students with the events, clubs, and achievements that matter most. Whether you're a student looking to explore campus life or a club head managing your organization, ClubHub makes everything seamless.
-For Students:
-🎯 Discover Events — Browse all upcoming campus events in one place. Filter by category — Technical, Cultural, Sports, Music, Arts, Dance, Literature, Photography, and Drama.
-📅 Register & Track — Register for events with a single tap and track your upcoming and past events through a personal calendar view.
-✅ QR Check-In — Each student gets a unique QR code. Club heads scan it at the venue for instant, paperless check-in.
-🏅 Badges & Achievements — Earn category badges by attending events. Unlock special achievements like Explorer, Early Bird, and Weekend Warrior. Rare legendary badges await the most dedicated campus participants.
-📊 Progress Tracking — Watch your progress rings fill up as you attend more events. Track your level, badge count, and event history all in one screen.
-🏛️ Follow Clubs — Stay updated with your favourite student clubs. View club profiles, upcoming events, and announcements.
-📢 Announcements — Get real-time announcements from club heads about event changes, updates, and important notices.
-📋 Duty Leave — Automatically generate Duty Leave requests when you check in to events, simplifying the academic leave process.
-🎓 Certificates — View and manage certificates earned through campus participation.
-For Club Heads:
-🛠️ Event Management — Create, edit, and manage events with full control over venue, date, time, capacity, registration fees, and target departments.
-📷 QR Scanner — A built-in QR scanner lets club heads check in students at the event venue in seconds. Unregistered students can be registered and checked in on the spot.
-📣 Post Announcements — Broadcast important updates to all registered or following students instantly.
-✅ DL Approval Center — Review and approve or reject student Duty Leave requests directly from the dashboard.
-📊 Event Roster — View the complete list of registered and checked-in students for any event.
-🖼️ Club Profile — Manage your club's profile, logo, description, and social handles.
-Home Screen Widget — Stay connected even from your home screen. ClubHub's widget shows your upcoming events at a glance without even opening the app.
+# ClubHub — Campus Events & Clubs
+
+ClubHub is your all-in-one campus companion that connects students with the events, clubs, and achievements that matter most.
+
+Whether you're a student looking to explore campus life or a club head managing your organization, ClubHub makes everything seamless.
+
+---
+
+## 🚀 For Students
+
+### 🎯 Discover Events
+Browse all upcoming campus events in one place.  
+Filter by categories like:
+- Technical
+- Cultural
+- Sports
+- Music
+- Arts
+- Dance
+- Literature
+- Photography
+- Drama
+
+### 📅 Register & Track
+Register for events with a single tap and track your journey through:
+- Upcoming events  
+- Past participation  
+- Personal calendar view  
+
+### ✅ QR Check-In
+Each student gets a unique QR code.  
+Club heads scan it for instant, paperless check-in.
+
+### 🏅 Badges & Achievements
+Earn badges by participating in events:
+- Explorer  
+- Early Bird  
+- Weekend Warrior  
+- Legendary badges for top users  
+
+### 📊 Progress Tracking
+Track your campus activity with:
+- Progress rings  
+- Level system  
+- Badge count  
+- Event history  
+
+### 🏛️ Follow Clubs
+Stay connected with your favorite clubs:
+- View profiles  
+- Track upcoming events  
+- Get updates  
+
+### 📢 Announcements
+Receive real-time updates from clubs:
+- Event changes  
+- Important notices  
+- Announcements  
+
+### 📋 Duty Leave
+Automatically generate Duty Leave requests when attending events.
+
+### 🎓 Certificates
+Access and manage certificates earned through participation.
+
+---
+
+## 🛠️ For Club Heads
+
+### 🎪 Event Management
+Create and manage events with full control:
+- Venue  
+- Date & time  
+- Capacity  
+- Fees  
+- Target departments  
+
+### 📷 QR Scanner
+- Scan student QR codes instantly  
+- Register walk-in students on the spot  
+
+### 📣 Post Announcements
+Broadcast updates to:
+- Registered students  
+- Followers  
+
+### ✅ Duty Leave Approval
+Approve or reject Duty Leave requests directly from the dashboard.
+
+### 📊 Event Roster
+View:
+- Registered students  
+- Check-in status  
+
+### 🖼️ Club Profile
+Manage:
+- Logo  
+- Description  
+- Social links  
+
+---
+
+## 📱 Home Screen Widget
+
+Stay updated without opening the app.  
+ClubHub widget shows your upcoming events directly on your home screen.
+
+---
+
+## ✨ About
+
 ClubHub is built for modern campus life — fast, intuitive, and designed with an Apple-quality interface that feels right at home on iPhone.
+
+---
+
+## 🧠 Tech (Optional - add if needed)
+
+- Swift (iOS App)
+- WidgetKit
+- Firebase / Backend (if used)
+- Next.js (Landing Page)
+
+---
+
+## 📌 Status
+
+🚧 In Development / MVP (update as needed)
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork and contribute!
+
+---
+
+## 📄 License
+
+Add your license here (MIT recommended)
