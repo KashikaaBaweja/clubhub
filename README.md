@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClubHub — Campus Events & Clubs
 
-## Getting Started
+ClubHub is your all-in-one campus companion that connects students with the events, clubs, and achievements that matter most.
 
-First, run the development server:
+Whether you're a student looking to explore campus life or a club head managing your organization, ClubHub makes everything seamless.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 For Students
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎯 Discover Events
+Browse all upcoming campus events in one place.  
+Filter by categories like:
+- Technical
+- Cultural
+- Sports
+- Music
+- Arts
+- Dance
+- Literature
+- Photography
+- Drama
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📅 Register & Track
+Register for events with a single tap and track your journey through:
+- Upcoming events  
+- Past participation  
+- Personal calendar view  
 
-## Learn More
+### ✅ QR Check-In
+Each student gets a unique QR code.  
+Club heads scan it for instant, paperless check-in.
 
-To learn more about Next.js, take a look at the following resources:
+### 🏅 Badges & Achievements
+Earn badges by participating in events:
+- Explorer  
+- Early Bird  
+- Weekend Warrior  
+- Legendary badges for top users  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📊 Progress Tracking
+Track your campus activity with:
+- Progress rings  
+- Level system  
+- Badge count  
+- Event history  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🏛️ Follow Clubs
+Stay connected with your favorite clubs:
+- View profiles  
+- Track upcoming events  
+- Get updates  
 
-## Deploy on Vercel
+### 📢 Announcements
+Receive real-time updates from clubs:
+- Event changes  
+- Important notices  
+- Announcements  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📋 Duty Leave
+Automatically generate Duty Leave requests when attending events.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🎓 Certificates
+Access and manage certificates earned through participation.
+
+---
+
+## 🛠️ For Club Heads
+
+### 🎪 Event Management
+Create and manage events with full control:
+- Venue  
+- Date & time  
+- Capacity  
+- Fees  
+- Target departments  
+
+### 📷 QR Scanner
+- Scan student QR codes instantly  
+- Register walk-in students on the spot  
+
+### 📣 Post Announcements
+Broadcast updates to:
+- Registered students  
+- Followers  
+
+### ✅ Duty Leave Approval
+Approve or reject Duty Leave requests directly from the dashboard.
+
+### 📊 Event Roster
+View:
+- Registered students  
+- Check-in status  
+
+### 🖼️ Club Profile
+Manage:
+- Logo  
+- Description  
+- Social links  
+
+---
+
+## 📱 Home Screen Widget
+
+Stay updated without opening the app.  
+ClubHub widget shows your upcoming events directly on your home screen.
+
+---
+
+## ✨ About
+
+ClubHub is built for modern campus life — fast, intuitive, and designed with an Apple-quality interface that feels right at home on iPhone.
+
+---
+
+## 🧠 Tech (Optional - add if needed)
+
+- Swift (iOS App)
+- WidgetKit
+- Firebase / Backend (if used)
+- Next.js (Landing Page)
+
+---
+
+## 📌 Status
+
+🚧 In Development / MVP (update as needed)
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork and contribute!
+
+---
+
+## 📄 License
+
+Add your license here (MIT recommended)
