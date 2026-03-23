@@ -112,9 +112,12 @@ export default function Hero() {
                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             
-            <button className="px-10 py-4 rounded-full font-bold text-slate-600 hover:text-teal-600 hover:bg-zinc-50 transition-all duration-300 border border-zinc-200 backdrop-blur-sm">
-              Explore Features
-            </button>
+             <button 
+               onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+               className="px-10 py-4 rounded-full font-bold text-slate-600 hover:text-teal-600 hover:bg-zinc-50 transition-all duration-300 border border-zinc-200 backdrop-blur-sm"
+             >
+               Explore Features
+             </button>
           </div>
         </motion.div>
 
@@ -157,9 +160,10 @@ export default function Hero() {
                   {/* Glass Shine */}
                   <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-20" />
                   
-                  {/* Dynamic Island Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 md:w-32 h-7 md:h-8 bg-black rounded-b-3xl z-30 flex items-center justify-center">
-                    <div className="w-8 md:w-10 h-1 rounded-full bg-zinc-800" />
+                  {/* Dynamic Island Pill */}
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-black rounded-full z-30 flex items-center justify-center border border-white/10 shadow-sm">
+                    <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-zinc-800 rounded-full mr-2" />
+                    <div className="w-6 md:w-8 h-1 rounded-full bg-zinc-800" />
                   </div>
                   
                   <img 
