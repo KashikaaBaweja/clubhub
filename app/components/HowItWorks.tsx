@@ -1,114 +1,108 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Ticket, Smartphone, Trophy, ArrowRight } from "lucide-react";
+import { Search, PenTool, CheckCircle, ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    number: "1",
-    label: "Start",
-    title: "Quick Setup",
-    description: "Download and create your profile in seconds.",
-    icon: <Smartphone className="w-8 h-8" />,
-    color: "from-teal-600 to-teal-800"
+    title: "Discover",
+    description: "Browse curated events and clubs that match your campus interests.",
+    icon: Search,
+    color: "from-teal-400 to-teal-500"
   },
   {
-    number: "2",
-    label: "Discover",
-    title: "Find Your Tribe",
-    description: "Browse 100+ clubs matching your interests.",
-    icon: <Users className="w-8 h-8" />,
-    color: "from-teal-500 to-emerald-600",
-    isFeatured: true
+    title: "Register",
+    description: "Secure your spot with one-tap registration and instant QR tickets.",
+    icon: PenTool,
+    color: "from-emerald-400 to-emerald-500"
   },
   {
-    number: "3",
-    label: "Join",
-    title: "Register Early",
-    description: "Register for events with just one tap.",
-    icon: <Ticket className="w-8 h-8" />,
-    color: "from-emerald-500 to-teal-400",
-    isFeatured: true
-  },
-  {
-    number: "4",
-    label: "Grow",
-    title: "Get Rewarded",
-    description: "Earn badges and climb the leaderboard.",
-    icon: <Trophy className="w-8 h-8" />,
-    color: "from-teal-400 to-cyan-500"
+    title: "Attend",
+    description: "Scan in, enjoy the event, and automatically track your achievements.",
+    icon: CheckCircle,
+    color: "from-teal-500 to-emerald-600"
   }
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding relative overflow-hidden bg-[#F8FFFE]/50">
+    <section id="how-it-works" className="section-padding bg-[#f8fafc] relative overflow-hidden noise perspective-2000">
+      {/* Background Accent */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px] -z-10" />
+
       <div className="container-custom">
-        <div className="text-center md:max-w-3xl mx-auto mb-[var(--block-gap)]">
+        <div className="text-center md:max-w-3xl mx-auto mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
-             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-teal-100/50">
-               <span>Journey</span>
+             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md text-teal-600 text-[11px] font-black uppercase tracking-[0.3em] mb-8 border border-white shadow-sm ring-1 ring-teal-500/5">
+               <span>Process</span>
             </div>
-            <h2 className="mb-6 text-[#021C1E]">
-              A Student's <span className="text-gradient">Journey</span>
+            <h2 className="mb-8 text-[#021C1E] tracking-tight">
+              A Seamless <span className="text-gradient">Experience</span>
             </h2>
-            <p className="max-w-2xl mx-auto text-[#6B7280] font-medium">
-              Simple, intuitive, and designed to make your campus life effortless.
+            <p className="max-w-2xl mx-auto text-slate-500 font-medium text-lg leading-relaxed">
+              Join the community in three simple steps. Designed to stay out of your way and keep you focused on the fun.
             </p>
           </motion.div>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Visual Connectors (Desktop only) */}
-          <div className="hidden lg:block absolute top-[40%] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-teal-200 to-transparent -z-10" />
-
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+        <div className="relative h-full">
+          {/* Advanced Connecting Line (Desktop) */}
+          <div className="hidden lg:block absolute top-[60px] left-[10%] right-[10%] h-[2px] bg-slate-200/50 -z-10 overflow-hidden rounded-full">
+            <motion.div 
+              initial={{ x: "-100%" }}
+              whileInView={{ x: "100%" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               viewport={{ once: true }}
-              whileHover={{ y: -12 }}
-              className={`relative group h-full ${step.isFeatured ? "lg:scale-105 z-10" : ""}`}
-            >
-              <div className="p-8 rounded-3xl bg-white border border-teal-50 shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 h-full relative overflow-hidden">
-                {/* Step Number Badge */}
-                <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-black text-[10px] shadow-sm">
-                  {step.number}
-                </div>
+              className="w-full h-full bg-gradient-to-r from-transparent via-teal-500 to-transparent opacity-40"
+            />
+          </div>
 
-                {/* Journey Label */}
-                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-600/40 mb-8 mt-4">
-                   {step.label}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24 relative z-10">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 50, rotateX: -10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ duration: 1, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center text-center group"
+              >
+                {/* 3D Icon Container */}
+                <div className="relative mb-12">
+                  <div className={`w-24 h-24 rounded-[2.5rem] bg-gradient-to-br ${step.color} p-[3px] shadow-2xl shadow-teal-500/20 transform transition-all duration-700 group-hover:scale-110 group-hover:rotate-12 hover:shadow-shadow-3d`}>
+                    <div className="w-full h-full bg-white rounded-[2.35rem] flex items-center justify-center text-teal-600 shadow-inner lighting-top-left">
+                      <step.icon size={40} strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  {/* Visual Step Number Overlay */}
+                  <div className="absolute -top-4 -right-4 w-11 h-11 rounded-3xl bg-[#021C1E] text-white text-[12px] font-black flex items-center justify-center ring-[6px] ring-[#f8fafc] shadow-xl group-hover:translate-y-[-5px] transition-transform duration-500">
+                    {index + 1}
+                  </div>
                 </div>
                 
-                {/* Icon with Glow */}
-                <div 
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white mb-6 transition-all duration-500 group-hover:scale-110 shadow-lg`}
-                >
-                   {step.icon}
-                </div>
-                
-                <h3 className="text-xl font-bold mb-3 text-[#021C1E]">{step.title}</h3>
-                <p className="text-sm font-medium text-[#6B7280] leading-relaxed">
+                <h3 className="text-2xl font-black mb-4 text-[#021C1E] tracking-tight group-hover:text-teal-600 transition-colors">{step.title}</h3>
+                <p className="text-slate-500 text-base font-medium leading-relaxed max-w-[280px]">
                   {step.description}
                 </p>
 
-                {/* Mobile/Tablet Arrow icon for flow */}
-                <div className="lg:hidden mt-6 text-teal-200">
-                  <ArrowRight className="mx-auto rotate-90 md:rotate-0" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                {/* Arrow (Mobile) */}
+                {index < 2 && (
+                  <div className="md:hidden mt-8 text-slate-200">
+                    <ArrowRight className="rotate-90 animate-bounce" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+

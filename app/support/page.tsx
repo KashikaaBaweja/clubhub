@@ -310,7 +310,7 @@ export default function SupportPage() {
                        </div>
                        
                        <div className="space-y-2">
-                          <label className="text-xs font-black uppercase tracking-widest text-zinc-400 ml-2">What's the issue?</label>
+                           <label className="text-xs font-black uppercase tracking-widest text-zinc-400 ml-2">What&apos;s the issue?</label>
                           <div className="relative">
                              <select className="w-full bg-slate-50 border border-teal-100 rounded-2xl p-4 focus:outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/5 transition-all appearance-none cursor-pointer text-[#021C1E] font-medium outline-none">
                                 <option value="" disabled selected>Select category...</option>

@@ -1,100 +1,184 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import React, { useRef, useEffect } from "react";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 30, stiffness: 200 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // Parallax transforms for the phone group
+  const groupRotateX = useTransform(smoothY, [-500, 500], [5, -5]);
+  const groupRotateY = useTransform(smoothX, [-500, 500], [-5, 5]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      const x = clientX - innerWidth / 2;
+      const y = clientY - innerHeight / 2;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const phones = [
+    { 
+      image: "/images/Dashboard.png", 
+      rotate: -15, 
+      x: -480, 
+      z: 10, 
+      scale: 0.8,
+      delay: 0.2,
+      opacity: 1
+    },
+    { 
+      image: "/images/Events.png", 
+      rotate: -5, 
+      x: -160, 
+      z: 30, 
+      scale: 0.95,
+      delay: 0,
+      opacity: 1
+    },
+    { 
+      image: "/images/clubs.png", 
+      rotate: 5, 
+      x: 160, 
+      z: 30, 
+      scale: 0.95,
+      delay: 0.4,
+      opacity: 1
+    },
+    { 
+      image: "/images/badges.png", 
+      rotate: 15, 
+      x: 480, 
+      z: 10, 
+      scale: 0.8,
+      delay: 0.6,
+      opacity: 1
+    }
+  ];
+
   return (
-    <section id="home" className="py-20 relative min-h-[90vh] flex items-center overflow-visible bg-white">
-      {/* High-Vibrancy Premium Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10"
-           style={{
-             background: `
-               radial-gradient(circle at 20% 30%, rgba(2, 195, 154, 0.08), transparent 50%),
-               linear-gradient(135deg, #f0fdfc 0%, #ffffff 50%, #f7fefe 100%)
-             `
-           }}
-      />
+    <section id="home" className="pt-24 pb-0 md:pt-32 md:pb-0 relative min-h-screen flex flex-col items-center overflow-hidden bg-white perspective-2000" ref={containerRef}>
+      
+      {/* Refined Background System */}
+      <div className="absolute inset-0 pointer-events-none -z-10">
+        {/* Subtle Dot Grid */}
+        <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: "radial-gradient(#000 0.5px, transparent 0.5px)", backgroundSize: "30px 30px" }} />
+        
+        {/* Animated Atmospheric Glows */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(20,184,166,0.1),transparent_70%)]" />
+      </div>
 
-      <div className="max-w-[1240px] mx-auto px-8 relative w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-10 lg:gap-11">
-          {/* Left Content */}
-          <div className="text-center lg:text-left z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-[520px] mx-auto lg:mx-0"
+      <div className="container-custom relative z-10 flex flex-col items-center text-center">
+        {/* Headline Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-5xl mx-auto mb-8"
+        >
+          <h1 className="mb-8 text-5xl md:text-8xl font-black text-[#021C1E] tracking-[-0.04em] leading-[0.95] outline-none">
+            Campus Life,<br />
+            <span className="text-gradient">Simplified.</span>
+          </h1>
+          
+          <p className="text-xl md:text-[26px] font-bold mb-5 text-slate-500 max-w-3xl mx-auto leading-relaxed tracking-tight">
+            Discover events, join clubs, and build your campus journey — all in one spatial place.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 relative z-10">
+            <button 
+              onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+              className="btn-premium bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-700 text-white min-w-[220px] group shadow-[0_20px_40px_rgba(20,184,166,0.3)] hover:shadow-[0_25px_50px_rgba(20,184,166,0.4)] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-[10px] font-black uppercase tracking-[0.2em] mb-8 border border-teal-100/50">
-                <Sparkles className="w-3 h-3" />
-                <span>ClubHub 1.0</span>
-              </div>
-              
-              <h1 className="text-6xl md:text-[80px] font-black leading-[0.9] tracking-[-0.04em] text-[#021C1E] mb-8">
-                Campus Life,<br />
-                <span className="text-gradient">Simplified.</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-[#6B7280] font-bold mb-3 leading-tight">
-                Everything happening on campus. In one app.
-              </p>
-              
-              <p className="text-sm font-medium text-[#9CA3AF] mb-10">
-                 Built for real campus life • Used by 1,000+ students
-              </p>
-
-              <div className="flex justify-center lg:justify-start mt-5">
-                <button 
-                  onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
-                  className="px-8 py-4 rounded-[14px] bg-gradient-to-r from-[#008080] to-[#02C39A] text-white font-bold text-xl shadow-[0_10px_25px_rgba(2,195,154,0.3)] hover:scale-[1.05] hover:-translate-y-0.5 active:scale-[0.98] transition-all"
-                >
-                  Get Started
-                </button>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Visuals */}
-          <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-10">
-            {/* Specified Phone Glow - integrated atmospheric lighting */}
-            <div 
-              className="absolute right-[10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(0,128,128,0.15),transparent_70%)] filter blur-[50px] -z-10 pointer-events-none" 
-            />
+               <span className="relative z-10 flex items-center justify-center gap-3">
+                 Launch App
+                 <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>→</motion.span>
+               </span>
+               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
             
+            <button className="px-10 py-4 rounded-full font-bold text-slate-600 hover:text-teal-600 hover:bg-zinc-50 transition-all duration-300 border border-zinc-200 backdrop-blur-sm">
+              Explore Features
+            </button>
+          </div>
+        </motion.div>
+
+        {/* 3-Phone Interactive Composition */}
+        <motion.div
+          style={{ 
+            rotateX: groupRotateX, 
+            rotateY: groupRotateY,
+          }}
+          className="relative w-full max-w-[1400px] h-[500px] md:h-[550px] flex justify-center items-end mt-24 md:mt-32 px-4 pb-0 z-0"
+        >
+          {phones.map((phone, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 40, rotate: 0 }}
-              animate={{ 
-                opacity: 1, 
-                y: 0,
-                rotate: 6,
-                scale: 0.82,
-                x: -30
-              }}
+              key={idx}
+              initial={{ opacity: 0, y: 100, rotate: phone.rotate, x: phone.x * 0.5 }}
+              animate={{ opacity: phone.opacity, y: 0, rotate: phone.rotate, x: phone.x }}
               transition={{ 
-                duration: 1.2,
-                ease: "easeOut",
-                delay: 0.2
+                duration: 1.5, 
+                delay: phone.delay,
+                ease: [0.16, 1, 0.3, 1] 
               }}
-              className="relative"
+              style={{ 
+                zIndex: phone.z,
+                scale: phone.scale,
+              }}
+              className="absolute group"
             >
-              {/* Main Phone Mockup */}
-              <div className="relative mx-auto w-[280px] md:w-[300px] aspect-[9/19.5] rounded-[3rem] border-[8px] border-zinc-950 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.12)] overflow-hidden bg-zinc-900 z-10 shrink-0">
-                {/* Modern Dynamic Island */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20 flex items-center justify-center">
-                   <div className="w-1 h-1 rounded-full bg-zinc-800 absolute right-4" />
+              {/* Floating Animation */}
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ 
+                  duration: 6, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  delay: idx * 0.5
+                }}
+                className="relative"
+              >
+                <div className="relative w-[240px] md:w-[320px] aspect-[9/19.5] rounded-[3rem] md:rounded-[3.5rem] border-[10px] md:border-[12px] border-zinc-950 bg-zinc-900 overflow-hidden ring-1 ring-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] transition-transform duration-500 group-hover:scale-[1.02]">
+                  {/* Glass Shine */}
+                  <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-20" />
+                  
+                  {/* Dynamic Island Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 md:w-32 h-7 md:h-8 bg-black rounded-b-3xl z-30 flex items-center justify-center">
+                    <div className="w-8 md:w-10 h-1 rounded-full bg-zinc-800" />
+                  </div>
+                  
+                  <img 
+                    src={phone.image} 
+                    className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-700"
+                    alt={`App Screen ${idx + 1}`}
+                  />
                 </div>
                 
-                <img 
-                   src="/images/Dashboard.png" 
-                   className="absolute inset-0 w-full h-full object-cover rounded-[2.5rem]"
-                   alt="App UI"
-                />
-              </div>
+                {/* Subtle Reflection Shadow below each phone */}
+                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-zinc-900/20 blur-2xl rounded-full -z-10" />
+              </motion.div>
             </motion.div>
-          </div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
+
+
+

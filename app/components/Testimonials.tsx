@@ -1,71 +1,86 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Rahul Sharma",
     role: "President, Entrepreneurship Club",
     avatar: "/images/hardik.jpg",
-    quote: "ClubHub made event management effortless. Attendance doubled within weeks."
+    quote: "ClubHub made event management effortless. Attendance doubled within weeks. A must-have for every student leader."
   },
   {
     name: "Priya Patel",
     role: "Computer Science Junior",
     avatar: "/images/kashika.jpg",
-    quote: "I found my best friends through clubs on ClubHub."
+    quote: "I found my best friends through clubs on ClubHub. It truly simplifies the social side of campus life."
   },
   {
     name: "Aditya Verma",
     role: "Secretary, Sports Committee",
     avatar: "/images/hemant.jpg",
-    quote: "No more manual logs — attendance tracking is seamless."
+    quote: "No more manual logs — attendance tracking is seamless. The real-time updates are a game changer."
   }
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section-padding bg-white relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-white relative overflow-hidden noise">
+      {/* Background Section Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[radial-gradient(circle,rgba(20,184,166,0.08),transparent_70%)] blur-[120px] -z-10" />
+
       <div className="container-custom">
-        <div className="text-center md:max-w-3xl mx-auto mb-[var(--block-gap)]">
+        <div className="text-center md:max-w-3xl mx-auto mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 text-sm font-bold mb-6 border border-teal-100/50">
-              <span className="text-xl">⭐</span> 4.8 rating from 1,000+ students
+             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-600 text-[11px] font-black uppercase tracking-[0.3em] mb-10 border border-teal-500/20 backdrop-blur-md">
+               <span>Testimonials</span>
             </div>
-            <h2 className="mb-6 text-[#021C1E]">What Students <span className="text-gradient">Are Saying</span></h2>
+            <h2 className="mb-8 text-[#021C1E] tracking-tight">
+               What Students <span className="text-gradient">Are Saying</span>
+            </h2>
+            <div className="flex items-center justify-center gap-1.5 mb-8 text-[#14b8a6]">
+               {[1, 2, 3, 4, 5].map((s) => <Star key={s} size={16} fill="currentColor" />)}
+               <span className="ml-3 text-sm font-black text-slate-400 uppercase tracking-widest leading-none">4.9 Rating • 2k+ Users</span>
+            </div>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 perspective-2000">
           {testimonials.map((test, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 40, rotateX: -5 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 1, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className={`p-10 rounded-3xl bg-white border border-teal-50 shadow-sm flex flex-col items-center text-center group transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 ${
-                index === 1 ? "md:scale-105 z-10 border-teal-100 shadow-teal-500/5 shadow-22xl" : ""
+              whileHover={{ y: -15, scale: 1.03, rotateY: 2 }}
+              className={`p-10 rounded-[3rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-500/20 group relative lighting-top-left ${
+                index === 1 ? "md:scale-105 z-10 ring-1 ring-teal-500/10" : ""
               }`}
             >
-              <div className="mb-6 p-2 rounded-full bg-teal-50 text-teal-600 group-hover:scale-110 transition-transform">
-                 <Quote size={20} />
+              {/* Floating Quote Icon */}
+              <div className="mb-10 w-14 h-14 rounded-2xl bg-teal-50/50 flex items-center justify-center text-[#14b8a6] group-hover:scale-110 group-hover:-rotate-12 transition-transform shadow-inner">
+                 <Quote size={24} fill="currentColor" opacity={0.2} />
               </div>
-              <p className="font-semibold mb-8 italic text-[#021C1E]/80 leading-relaxed text-center">
+              
+              <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10 tracking-tight italic">
                 "{test.quote}"
               </p>
-              <div className="mt-auto">
-                <div className="w-14 h-14 rounded-full overflow-hidden mb-4 mx-auto border-2 border-teal-100 shadow-sm">
+              
+              <div className="mt-auto pt-8 border-t border-slate-50 flex items-center gap-5">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-lg group-hover:scale-110 transition-transform">
                    <img src={test.avatar} className="w-full h-full object-cover" alt={test.name} />
                 </div>
-                <h4 className="text-lg font-black text-[#021C1E]">{test.name}</h4>
-                <p className="text-[10px] text-teal-600 font-bold uppercase tracking-wider">{test.role}</p>
+                <div className="text-left">
+                   <h4 className="text-base font-black text-[#021C1E] tracking-tight">{test.name}</h4>
+                   <p className="text-[11px] text-[#14b8a6] font-black uppercase tracking-[0.2em]">{test.role}</p>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -74,3 +89,4 @@ export default function Testimonials() {
     </section>
   );
 }
+
