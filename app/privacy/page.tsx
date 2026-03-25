@@ -8,10 +8,10 @@ export default function PrivacyPolicy() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <div className="pt-32 pb-24 container mx-auto px-6 max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-[#021C1E]">
-          Privacy <span className="text-teal-600">Policy</span>
+        <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-[#021C1E]">
+          Privacy <span className="text-gradient">Policy</span>
         </h1>
-        <p className="text-zinc-500 mb-12 font-medium">Last Updated: {lastUpdated}</p>
+        <p className="text-xl font-bold text-slate-400 mb-12 tracking-tight uppercase">Last Updated: {lastUpdated}</p>
         
         <div className="prose prose-teal max-w-none space-y-12 text-[#021C1E]/80">
           <section>

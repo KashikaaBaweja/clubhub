@@ -95,41 +95,24 @@ export default function SupportPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-teal-100 dark:bg-[#021C1E] dark:text-[#E6FFFA]">
+    <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-teal-100">
       <Navbar />
 
       {/* Header Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-gradient-to-b from-teal-50/50 to-white dark:from-[#021C1E] dark:to-[#021C1E]">
+      <section className="relative pt-32 pb-6 px-6 overflow-hidden bg-gradient-to-b from-teal-50/50 to-white">
         <div className="container mx-auto max-w-5xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-foreground">
-              Support <span className="text-teal-600 dark:text-teal-400">Center</span>
+            <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-[#021C1E]">
+              Support <span className="text-gradient">Center</span>
             </h1>
-            <p className="text-2xl md:text-3xl font-medium text-zinc-500 dark:text-teal-400/60 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-[26px] font-bold text-slate-500 mb-0 max-w-2xl mx-auto leading-relaxed tracking-tight">
               Welcome to the ClubHub Help Center. Browse common questions below or reach out to us anytime.
             </p>
 
-            {/* App Details Glass Card */}
-            <div className="inline-flex gap-8 p-6 glass rounded-[2.5rem] border border-teal-100/20 shadow-sm items-center">
-               <div className="text-left">
-                  <p className="text-[10px] uppercase tracking-widest font-black text-teal-600 dark:text-teal-400 mb-1">App Name</p>
-                  <p className="font-bold">ClubHub</p>
-               </div>
-               <div className="w-px h-10 bg-teal-100/20" />
-               <div className="text-left">
-                  <p className="text-[10px] uppercase tracking-widest font-black text-teal-600 dark:text-teal-400 mb-1">Version</p>
-                  <p className="font-bold">1.0</p>
-               </div>
-               <div className="w-px h-10 bg-teal-100/20" />
-               <div className="text-left">
-                  <p className="text-[10px] uppercase tracking-widest font-black text-teal-600 dark:text-teal-400 mb-1">Compatibility</p>
-                  <p className="font-bold">iOS 17+ (iPhone)</p>
-               </div>
-            </div>
           </motion.div>
         </div>
         
@@ -138,23 +121,23 @@ export default function SupportPage() {
       </section>
 
       {/* Category Cards */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-6">
         <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
               whileHover={{ y: -10 }}
-              className="p-8 rounded-[2.5rem] bg-card border border-border shadow-xl shadow-zinc-200/10 group hover:border-teal-500/30 transition-all text-center flex flex-col items-center dark:bg-teal-950/20"
+              className="p-8 rounded-[2.5rem] bg-white border border-teal-500/10 shadow-xl shadow-teal-500/5 group hover:border-teal-500/30 transition-all text-center flex flex-col items-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                 {cat.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4">{cat.title}</h3>
-              <p className="text-zinc-500 dark:text-teal-100/60 mb-8 leading-relaxed">
+              <h3 className="text-2xl font-black mb-4 text-[#021C1E]">{cat.title}</h3>
+              <p className="text-slate-500 mb-8 leading-relaxed font-medium">
                 {cat.description}
               </p>
               <button 
@@ -174,21 +157,21 @@ export default function SupportPage() {
       {/* FAQ Section */}
       <section id="faqs-container" className="py-24 px-6 bg-zinc-50/50 dark:bg-black/10">
         <div className="container mx-auto max-w-4xl">
-           <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-black mb-4 text-[#021C1E] tracking-tight">Frequently Asked Questions</h2>
               <div className="flex flex-wrap justify-center gap-2 mt-8">
                  {categories.map((cat) => (
                     <button
                       key={cat.id}
                       onClick={() => setActiveCategory(cat.id)}
-                      className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat.id ? "bg-teal-600 text-white" : "bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-500 dark:text-teal-100/60 hover:border-teal-500/30"}`}
+                      className={`px-4 py-2 rounded-full text-sm font-black transition-all ${activeCategory === cat.id ? "bg-teal-600 text-white shadow-lg shadow-teal-500/20" : "bg-white border border-zinc-200 text-slate-400 hover:border-teal-500/30 hover:text-teal-600"}`}
                     >
                       {cat.title}
                     </button>
                  ))}
                  <button 
                     onClick={() => setActiveCategory(null)}
-                    className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === null ? "bg-teal-600 text-white" : "bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-500 dark:text-teal-100/60 hover:border-teal-500/30"}`}
+                    className={`px-4 py-2 rounded-full text-sm font-black transition-all ${activeCategory === null ? "bg-teal-600 text-white shadow-lg shadow-teal-500/20" : "bg-white border border-zinc-200 text-slate-400 hover:border-teal-500/30 hover:text-teal-600"}`}
                  >
                     Show All
                  </button>
@@ -205,18 +188,20 @@ export default function SupportPage() {
                       {items.map((faq, idx) => {
                          const stateKey = `${catId}-${idx}`;
                          return (
-                           <motion.div
+                            <motion.div
                                key={stateKey}
-                               initial={{ opacity: 0 }}
-                               animate={{ opacity: 1 }}
-                               className="rounded-3xl bg-white dark:bg-white/5 border border-zinc-100 dark:border-white/10 shadow-sm overflow-hidden"
+                               initial={{ opacity: 0, y: 15 }}
+                               whileInView={{ opacity: 1, y: 0 }}
+                               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                               viewport={{ once: true, margin: "-50px" }}
+                               className="rounded-3xl bg-white border border-teal-500/5 shadow-[0_10px_30px_rgba(20,184,166,0.04)] overflow-hidden"
                            >
                               <button
                                 onClick={() => toggleFaq(stateKey)}
-                                className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-lg hover:bg-zinc-50/50 dark:hover:bg-white/5 transition-colors"
+                                className="w-full p-6 text-left flex items-center justify-between gap-4 font-black text-lg hover:bg-zinc-50/50 transition-colors text-[#021C1E] tracking-tight"
                               >
                                 {faq.question}
-                                <div className={`p-1 rounded-full transition-transform ${openFaq === stateKey ? "rotate-180 bg-teal-600 text-white" : "bg-zinc-100 dark:bg-white/10 text-zinc-400 dark:text-teal-400/60"}`}>
+                                <div className={`p-1 rounded-full transition-transform ${openFaq === stateKey ? "rotate-180 bg-teal-600 text-white" : "bg-zinc-100 text-zinc-400"}`}>
                                    <ChevronDown size={20} />
                                 </div>
                               </button>
@@ -229,7 +214,7 @@ export default function SupportPage() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="p-6 pt-0 text-zinc-500 dark:text-teal-100/60 leading-relaxed text-lg border-t border-zinc-50 dark:border-white/5">
+                                    <div className="p-6 pt-0 text-slate-500 leading-relaxed text-lg font-medium border-t border-zinc-50">
                                       {faq.answer}
                                     </div>
                                   </motion.div>

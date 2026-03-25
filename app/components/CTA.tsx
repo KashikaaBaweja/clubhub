@@ -1,16 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function CTA() {
   return (
     <section className="section-padding relative overflow-hidden bg-white noise">
       <div className="container-custom relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative max-w-6xl mx-auto rounded-[4rem] p-16 md:p-24 overflow-hidden text-center text-white shadow-[0_60px_100px_-20px_rgba(20,184,166,0.4)]"
           style={{
             background: `
@@ -27,7 +28,8 @@ export default function CTA() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
+              transition={{ delay: 0.05, duration: 0.4 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-7xl font-black mb-10 leading-[1.05] tracking-tighter text-white drop-shadow-2xl">
                 Your Campus Life,<br />
@@ -38,12 +40,18 @@ export default function CTA() {
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <button className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-gradient-to-br from-teal-400 to-emerald-600 hover:from-teal-300 hover:to-emerald-500 text-white font-black text-2xl shadow-[0_20px_50px_rgba(20,184,166,0.4)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/20 active:scale-95">
+                <Link 
+                  href="/#features"
+                  className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-gradient-to-br from-teal-400 to-emerald-600 hover:from-teal-300 hover:to-emerald-500 text-white font-black text-2xl shadow-[0_20px_50px_rgba(20,184,166,0.4)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/20 active:scale-95 flex items-center justify-center"
+                >
                   Download App
-                </button>
-                <button className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-white/5 hover:bg-white/10 text-white font-black text-2xl border border-white/10 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95">
+                </Link>
+                <Link 
+                  href="/#faq"
+                  className="w-full sm:w-auto px-12 py-6 rounded-3xl bg-white/5 hover:bg-white/10 text-white font-black text-2xl border border-white/10 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center"
+                >
                   View FAQ
-                </button>
+                </Link>
               </div>
               
               <div className="mt-16 flex items-center justify-center gap-3 text-[11px] font-black uppercase tracking-[0.4em] text-white/30">

@@ -33,10 +33,10 @@ export default function HowItWorks() {
       <div className="container-custom">
         <div className="text-center md:max-w-3xl mx-auto mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
           >
              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md text-teal-600 text-[11px] font-black uppercase tracking-[0.3em] mb-8 border border-white shadow-sm ring-1 ring-teal-500/5">
                <span>Process</span>
@@ -66,11 +66,11 @@ export default function HowItWorks() {
             {steps.map((step, index) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 50, rotateX: -10 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{ duration: 1, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center text-center group"
+              initial={{ opacity: 0, y: 30, rotateX: -10 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="flex flex-col items-center text-center group"
               >
                 {/* 3D Icon Container */}
                 <div className="relative mb-12">

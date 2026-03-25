@@ -65,10 +65,10 @@ export default function Features() {
       <div className="container-custom">
         <div className="text-center md:max-w-3xl mx-auto mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "200px" }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-600 text-[11px] font-black uppercase tracking-[0.3em] mb-4 border border-teal-500/20 backdrop-blur-md">
               <span>Capabilities</span>
@@ -85,12 +85,12 @@ export default function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 40, rotateX: -5 }}
+              initial={{ opacity: 0, y: 20, rotateX: -5 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "100px" }}
               whileHover={{ y: -15, scale: 1.02, rotateX: 2 }}
-              className="group p-6 md:p-8 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-500/20 relative overflow-hidden lighting-top-left"
+              className="group p-6 md:p-8 rounded-[2.5rem] bg-white border border-teal-500/5 shadow-[0_10px_40px_rgba(20,184,166,0.03)] transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-500/20 relative overflow-hidden lighting-top-left"
             >
               {/* Inner Glow Mockup */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />

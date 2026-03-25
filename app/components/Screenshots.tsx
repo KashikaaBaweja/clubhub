@@ -78,8 +78,8 @@ export default function AppPreview() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "200px" }}
           >
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-[#14b8a6] text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-teal-500/10">
                <span>Interface</span>
@@ -97,10 +97,10 @@ export default function AppPreview() {
           {previews.map((preview, index) => (
             <motion.div
               key={preview.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "100px" }}
               whileHover={{ y: -15, scale: 1.02 }}
               className="group flex flex-col items-center text-center transition-all duration-300"
             >

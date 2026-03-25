@@ -33,10 +33,10 @@ export default function Testimonials() {
       <div className="container-custom">
         <div className="text-center md:max-w-3xl mx-auto mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
           >
              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-600 text-[11px] font-black uppercase tracking-[0.3em] mb-10 border border-teal-500/20 backdrop-blur-md">
                <span>Testimonials</span>
@@ -55,12 +55,12 @@ export default function Testimonials() {
           {testimonials.map((test, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, rotateX: -5 }}
+              initial={{ opacity: 0, y: 30, rotateX: -5 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 1, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
               whileHover={{ y: -15, scale: 1.03, rotateY: 2 }}
-              className={`p-10 rounded-[3rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-500/20 group relative lighting-top-left ${
+              className={`p-10 rounded-[3rem] bg-white border border-teal-500/5 shadow-[0_20px_50px_rgba(20,184,166,0.05)] flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-500/20 group relative lighting-top-left ${
                 index === 1 ? "md:scale-105 z-10 ring-1 ring-teal-500/10" : ""
               }`}
             >

@@ -46,7 +46,7 @@ export default function Team() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
           >
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-[#14b8a6] text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-teal-500/10">
                <span>The Team</span>
@@ -66,9 +66,9 @@ export default function Team() {
               key={dev.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 rounded-[2.5rem] bg-white border border-zinc-100 shadow-[0_15px_30px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(20,184,166,0.12)] hover:border-teal-500/20 group"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="p-6 rounded-[2.5rem] bg-white border border-teal-500/5 shadow-[0_15px_30px_rgba(20,184,166,0.04)] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(20,184,166,0.12)] hover:border-teal-500/20 group"
             >
               {/* Profile Image */}
               <div className="relative aspect-square w-full mb-8 overflow-hidden rounded-[1.8rem] bg-zinc-50 border border-zinc-200/50">

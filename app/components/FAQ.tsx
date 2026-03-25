@@ -44,8 +44,8 @@ export default function FAQ() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
           >
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-[#14b8a6] text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-teal-500/10">
                 <span>Support</span>
@@ -63,9 +63,9 @@ export default function FAQ() {
               key={index}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
-              viewport={{ once: true }}
-              className="rounded-[1.5rem] bg-white border border-zinc-100 overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.08)] transition-all duration-300"
+              transition={{ duration: 0.3, delay: index * 0.02, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="rounded-[1.5rem] bg-white border border-teal-500/5 overflow-hidden shadow-[0_10px_30px_rgba(20,184,166,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.08)] transition-all duration-300"
             >
               <button
                 onClick={() => toggle(index)}
@@ -75,7 +75,7 @@ export default function FAQ() {
                    <HelpCircle className={`text-[#14b8a6] opacity-20 group-hover:opacity-40 transition-opacity ${openIndex === index ? "opacity-100" : ""}`} size={20} />
                    <span className="font-bold text-lg text-[#021C1E] tracking-tight">{faq.question}</span>
                 </div>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index ? "rotate-180 bg-[#14b8a6] text-white shadow-lg" : "bg-zinc-50 text-zinc-400 group-hover:bg-[#14b8a6]/10 group-hover:text-[#14b8a6]"}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index ? "rotate-180 bg-[#14b8a6] text-white shadow-lg" : "bg-teal-50/50 text-zinc-400 group-hover:bg-[#14b8a6]/10 group-hover:text-[#14b8a6]"}`}>
                    <ChevronDown size={18} />
                 </div>
               </button>

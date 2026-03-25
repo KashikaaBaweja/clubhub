@@ -9,10 +9,10 @@ export default function Contact() {
       <div className="pt-32 pb-24 container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
            <div className="lg:w-1/2">
-              <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-[#021C1E]">
-                Get in <span className="text-teal-600">Touch.</span>
+              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-[#021C1E]">
+                Get in <span className="text-gradient">Touch.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-zinc-500 font-semibold mb-12 leading-relaxed">
+              <p className="text-xl md:text-[26px] font-bold text-slate-500 mb-12 leading-relaxed tracking-tight">
                 Have questions about ClubHub? Whether you&apos;re a student, club leader, or university official, we&apos;re here to help.
               </p>
               
@@ -21,11 +21,11 @@ export default function Contact() {
                    <div className="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                       <Mail size={24} />
                    </div>
-                   <div>
+                    <div>
                       <h4 className="text-lg font-black text-[#021C1E]">Email Us</h4>
-                      <p className="text-zinc-500 font-medium italic">General: info@clubhub.com</p>
-                      <p className="text-teal-600 font-bold">Support: support@clubhub.com</p>
-                   </div>
+                      <p className="text-slate-500 font-medium italic">General: info@clubhub.com</p>
+                      <p className="text-[#14b8a6] font-bold">Support: support@clubhub.com</p>
+                    </div>
                 </div>
                 
                 <div className="flex items-start gap-6 group">

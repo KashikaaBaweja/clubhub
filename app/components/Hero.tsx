@@ -77,18 +77,20 @@ export default function Hero() {
       {/* Refined Background System */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         {/* Subtle Dot Grid */}
-        <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: "radial-gradient(#000 0.5px, transparent 0.5px)", backgroundSize: "30px 30px" }} />
+        <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: "radial-gradient(#14b8a6 0.5px, transparent 0.5px)", backgroundSize: "30px 30px" }} />
         
-        {/* Animated Atmospheric Glows */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(20,184,166,0.1),transparent_70%)]" />
+        {/* Animated Atmospheric Glows - Replaced greyish subtle glow with vibrant teal-green gradient */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[radial-gradient(circle_at_50%_-10%,rgba(20,184,166,0.2),rgba(52,211,153,0.1),transparent_70%)]" />
+        <div className="absolute top-[20%] left-0 w-full h-full bg-[radial-gradient(circle_at_0%_30%,rgba(20,184,166,0.05),transparent_50%)]" />
+        <div className="absolute top-[20%] right-0 w-full h-full bg-[radial-gradient(circle_at_100%_30%,rgba(52,211,153,0.05),transparent_50%)]" />
       </div>
 
       <div className="container-custom relative z-10 flex flex-col items-center text-center">
         {/* Headline Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl mx-auto mb-8"
         >
           <h1 className="mb-8 text-5xl md:text-8xl font-black text-[#021C1E] tracking-[-0.04em] leading-[0.95] outline-none">
@@ -114,7 +116,7 @@ export default function Hero() {
             
              <button 
                onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
-               className="px-10 py-4 rounded-full font-bold text-slate-600 hover:text-teal-600 hover:bg-zinc-50 transition-all duration-300 border border-zinc-200 backdrop-blur-sm"
+               className="px-10 py-4 rounded-full font-bold text-slate-600 hover:text-teal-600 hover:bg-teal-50/50 transition-all duration-300 border border-teal-500/10 backdrop-blur-sm"
              >
                Explore Features
              </button>
@@ -132,11 +134,11 @@ export default function Hero() {
           {phones.map((phone, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 100, rotate: phone.rotate, x: phone.x * 0.5 }}
+              initial={{ opacity: 0, y: 50, rotate: phone.rotate, x: phone.x * 0.5 }}
               animate={{ opacity: phone.opacity, y: 0, rotate: phone.rotate, x: phone.x }}
               transition={{ 
-                duration: 1.5, 
-                delay: phone.delay,
+                duration: 0.8, 
+                delay: phone.delay * 0.5,
                 ease: [0.16, 1, 0.3, 1] 
               }}
               style={{ 
@@ -173,8 +175,8 @@ export default function Hero() {
                   />
                 </div>
                 
-                {/* Subtle Reflection Shadow below each phone */}
-                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-zinc-900/20 blur-2xl rounded-full -z-10" />
+                {/* Subtle Teal Reflection/Glow below each phone */}
+                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] h-12 bg-teal-500/20 blur-3xl rounded-full -z-10" />
               </motion.div>
             </motion.div>
           ))}
