@@ -56,7 +56,7 @@ export default function CTA() {
               
               <div className="mt-16 flex items-center justify-center gap-3 text-[11px] font-black uppercase tracking-[0.4em] text-white/30">
                  <div className="w-12 h-px bg-white/10" />
-                 Available on iOS & Android
+                 Available on iOS
                  <div className="w-12 h-px bg-white/10" />
               </div>
             </motion.div>
