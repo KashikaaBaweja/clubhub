@@ -2,24 +2,25 @@
 
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
     name: "Rahul Sharma",
     role: "President, Entrepreneurship Club",
-    avatar: "/hardik_v2.png",
+    avatar: "/images/hardik.png",
     quote: "ClubHub made event management effortless. Attendance doubled within weeks. A must-have for every student leader."
   },
   {
     name: "Priya Patel",
     role: "Computer Science Junior",
-    avatar: "/kashika_v2.png",
+    avatar: "/images/kashika.png",
     quote: "I found my best friends through clubs on ClubHub. It truly simplifies the social side of campus life."
   },
   {
     name: "Aditya Verma",
     role: "Secretary, Sports Committee",
-    avatar: "/hemant_v2.png",
+    avatar: "/images/hemant.png",
     quote: "No more manual logs — attendance tracking is seamless. The real-time updates are a game changer."
   }
 ];
@@ -75,7 +76,13 @@ export default function Testimonials() {
               
               <div className="mt-auto pt-8 border-t border-slate-50 flex items-center gap-5">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-lg group-hover:scale-110 transition-transform">
-                   <img src={test.avatar} className="w-full h-full object-cover" alt={test.name} />
+                   <Image 
+                     src={test.avatar} 
+                     className="w-full h-full object-cover" 
+                     alt={test.name}
+                     width={80}
+                     height={80}
+                   />
                 </div>
                 <div className="text-left">
                    <h4 className="text-base font-black text-[#021C1E] tracking-tight">{test.name}</h4>
