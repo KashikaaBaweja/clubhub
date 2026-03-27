@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -168,10 +169,13 @@ export default function Hero() {
                     <div className="w-6 md:w-8 h-1 rounded-full bg-zinc-800" />
                   </div>
                   
-                  <img 
+                  <Image 
                     src={phone.image} 
                     className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-700"
                     alt={`App Screen ${idx + 1}`}
+                    width={400}
+                    height={860}
+                    priority={idx < 4}
                   />
                 </div>
                 

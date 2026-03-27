@@ -2,33 +2,34 @@
 
 import { motion } from "framer-motion";
 import { Linkedin, Instagram } from "lucide-react";
+import Image from "next/image";
 
 const developers = [
   {
     name: "Kashika",
     bio: "Focused on building smooth, intuitive, and high-performance mobile experiences for ClubHub.",
-    image: "/kashika_v2.png",
+    image: "/images/kashika.png",
     linkedin: "https://www.linkedin.com/in/kashika-baweja-8ba593282",
     instagram: "https://www.instagram.com/kashikabaweja?igsh=MXR1d3NsMXY3bDVpYg%3D%3D&utm_source=qr",
   },
   {
     name: "Hardik",
     bio: "Works on both frontend and backend to ensure seamless functionality and performance.",
-    image: "/hardik_v2.png",
+    image: "/images/hardik.png",
     linkedin: "https://www.linkedin.com/in/hardik6301/",
     instagram: "https://www.instagram.com/hardik__6301?igsh=d2RoNW54YnB0c3Nk",
   },
   {
     name: "Hemant",
     bio: "Designs APIs, manages databases, and ensures scalability of the platform.",
-    image: "/hemant_v2.png",
+    image: "/images/hemant.png",
     linkedin: "https://www.linkedin.com/in/hemant-sardana-9b8352263/",
     instagram: "https://www.instagram.com/hemant.2416?igsh=MWtlYnZ0ZDh5MjRxZA==",
   },
   {
     name: "Navdeep",
     bio: "Creates clean, modern, and user-friendly interfaces for a great user experience.",
-    image: "/navdeep_v2.png",
+    image: "/images/navdeep.png",
     linkedin: "https://www.linkedin.com/in/navdeep-singh-47a538244/",
     instagram: "https://www.instagram.com/navdeepsinhmar_?igsh=MXcycjhpM2ozOGJ5cA==",
   },
@@ -72,9 +73,11 @@ export default function Team() {
             >
               {/* Profile Image */}
               <div className="relative aspect-square w-full mb-8 overflow-hidden rounded-[1.8rem] bg-zinc-50 border border-zinc-200/50">
-                <img
+                <Image
                   src={dev.image}
                   alt={dev.name}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Calendar, Users, Trophy } from "lucide-react";
+import Image from "next/image";
 
 const previews = [
   {
@@ -12,9 +13,11 @@ const previews = [
     tilt: "rotate-[-4deg] translate-y-4",
     z: "z-10",
     ui: (
-      <img 
+      <Image 
         src="/images/Dashboard.png" 
         alt="Home Dashboard" 
+        width={400}
+        height={860}
         className="w-full h-full object-cover"
       />
     )
@@ -27,9 +30,11 @@ const previews = [
     tilt: "rotate-[2deg] -translate-y-4",
     z: "z-20",
     ui: (
-      <img 
+      <Image 
         src="/images/Events.png" 
         alt="Events List" 
+        width={400}
+        height={860}
         className="w-full h-full object-cover"
       />
     )
@@ -42,9 +47,11 @@ const previews = [
     tilt: "rotate-[-2deg] translate-y-2",
     z: "z-10",
     ui: (
-      <img 
+      <Image 
         src="/images/clubs.png" 
         alt="Clubs Directory" 
+        width={400}
+        height={860}
         className="w-full h-full object-cover"
       />
     )
@@ -57,9 +64,11 @@ const previews = [
     tilt: "rotate-[4deg] translate-y-6",
     z: "z-0",
     ui: (
-      <img 
+      <Image 
         src="/images/badges.png" 
         alt="Achievement Badges" 
+        width={400}
+        height={860}
         className="w-full h-full object-cover"
       />
     )
