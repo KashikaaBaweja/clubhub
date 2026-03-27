@@ -7,19 +7,19 @@ const testimonials = [
   {
     name: "Rahul Sharma",
     role: "President, Entrepreneurship Club",
-    avatar: "/hardik.png",
+    avatar: "/hardik_v2.png",
     quote: "ClubHub made event management effortless. Attendance doubled within weeks. A must-have for every student leader."
   },
   {
     name: "Priya Patel",
     role: "Computer Science Junior",
-    avatar: "/kashika.png",
+    avatar: "/kashika_v2.png",
     quote: "I found my best friends through clubs on ClubHub. It truly simplifies the social side of campus life."
   },
   {
     name: "Aditya Verma",
     role: "Secretary, Sports Committee",
-    avatar: "/hemant.png",
+    avatar: "/hemant_v2.png",
     quote: "No more manual logs — attendance tracking is seamless. The real-time updates are a game changer."
   }
 ];
@@ -89,4 +89,3 @@ export default function Testimonials() {
     </section>
   );
 }
-
