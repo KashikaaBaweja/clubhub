@@ -7,19 +7,19 @@ const testimonials = [
   {
     name: "Rahul Sharma",
     role: "President, Entrepreneurship Club",
-    avatar: "/images/team-hardik.png",
+    avatar: "/hardik.png",
     quote: "ClubHub made event management effortless. Attendance doubled within weeks. A must-have for every student leader."
   },
   {
     name: "Priya Patel",
     role: "Computer Science Junior",
-    avatar: "/images/team-kashika.png",
+    avatar: "/kashika.png",
     quote: "I found my best friends through clubs on ClubHub. It truly simplifies the social side of campus life."
   },
   {
     name: "Aditya Verma",
     role: "Secretary, Sports Committee",
-    avatar: "/images/team-hemant.png",
+    avatar: "/hemant.png",
     quote: "No more manual logs — attendance tracking is seamless. The real-time updates are a game changer."
   }
 ];
